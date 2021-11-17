@@ -15,5 +15,18 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  onLaunch: function() {
+    if(!wx.cloud) {
+      console.error('请使用 2.2.3或以上的基础库以使用云能力')
+    } else {
+      wx.cloud.init({
+        traceUser: true,
+      })
+    }
+    // 数据库
+    const db = wx.cloud.database({
+      env:'cloud1-9guae2ay7d522bec'
+    })
   }
 })

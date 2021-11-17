@@ -8,7 +8,7 @@ Page({
     radioValue2:'',
     radioValue3:'',
     nameValue:'',
-    IDValue:'',
+    IDcardValue:'',
     addressValue:'',
     imgs:[],
     locationAddress:'',
@@ -47,7 +47,7 @@ Page({
       vm.setData(vm.data)
     }
     if(userText2) {
-      vm.data.IDValue = userText2
+      vm.data.IDcardValue = userText2
       vm.setData(vm.data)
     }
     if(userText3) {
@@ -152,10 +152,10 @@ Page({
     wx.setStorageSync('userText',value)
     // 监听用户输入的信息，有内容输入进去，就会使用wx.getStorageSync('userText',value)设置usertext这个key的值，使用 wx.getStorageSync('userText')可以得到usertext这个key的值
   },
-  onIDValue(e) {
+  onIDcardValue(e) {
     let vm = this
     let value = e.detail.value
-    vm.setData({IDValue: value})
+    vm.setData({IDcardValue: value})
     wx.setStorageSync('userText2',value)
   },
   onaddressValue(e) {
@@ -244,7 +244,7 @@ Page({
        duration: 2000
      })
      return;
-   } else if (vm.data.IDValue.length!=18) {
+   } else if (vm.data.IDcardValue.length!=18) {
      wx.showToast({
        title: '请输入身份证号码',
        icon: 'success',
@@ -300,7 +300,7 @@ Page({
    cont.add({
      data: {
        name: vm.data.nameValue,
-       ID: vm.data.IDValue,
+       IDcard: vm.data.IDcardValue,
        address: vm.data.addressValue,
        radio1: vm.data.radioValue1,
        radio2: vm.data.radioValue2,

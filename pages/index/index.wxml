@@ -20,7 +20,7 @@
           <view class="number">02.</view>
           <view>身份证号</view>
         </view>
-        <input type="text" value="{{IDValue}}" bindinput="onIDValue"/>
+        <input type="text" value="{{IDcardValue}}" bindinput="onIDcardValue"/>
       </view>
       <!-- 03 -->
       <view class="content">

@@ -1,0 +1,110 @@
+/**index.wxss**/
+page {
+  background-color: #F5F6F8;
+}
+/* 头部区域 */
+.header {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+.header view:first-child {
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.header view:last-child {
+  padding-left: 20px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+/* 表单区域 */
+.content {
+  background-color: #fff;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+.newContent {
+  height: 130px;
+  justify-content: space-between;
+}
+.content>view {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-weight: 700;
+}
+.content .number {
+  color: blue;
+}
+.content input {
+  margin: 30px 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+.content radio-group {
+  margin-left: 20px;
+}
+radio-group view {
+  margin: 10px 0;
+}
+
+/* 上传图片部分 */
+.weui-uploader {
+  margin: 0 auto;
+}
+
+.pic {
+  float:left;
+  position:relative;
+  margin-right:9px;
+  margin-bottom:9px;
+}
+
+.delete-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+image{
+  width: 80px;
+  height: 80px;
+}
+
+/* 尾部区域 */
+
+.submitBtn {
+  margin: 15px 0;
+  background-color: blue;
+  color: #fff;
+  width: 90% !important;
+}
+
+.footer view{
+  margin-left: 20px;
+  font-size: 14px;
+  color: #CDCECE;
+}
+.footer view:last-child {
+  padding-bottom: 10px;
+}
+
+/* 位置显示字体 */
+.thisCityName {
+  margin-left: 20px;
+}
+
+/* 获取位置按钮 */
+.addressBtn {
+  margin-left: 10px;
+}
+
+
+
+
+
+

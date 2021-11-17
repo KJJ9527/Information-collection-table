@@ -1,0 +1,104 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="header">
+        <view>复学码状态更新</view>
+        <view>请如实填写以下信息，更新复学码状态</view>
+      </view>
+    <form catchsubmit="formSubmit">
+      <!-- 01 -->
+      <view class="content">
+        <view>
+          <view class="number">01.</view>
+          <view>姓名</view>
+        </view>
+        <input type="text" value="{{inputText}}" bindinput="onInputText"/>
+      </view>
+      <!-- 02 -->
+      <view class="content">
+        <view>
+          <view class="number">02.</view>
+          <view>身份证号</view>
+        </view>
+        <input type="text" value="{{inputText2}}" bindinput="onInputText2"/>
+      </view>
+      <!-- 03 -->
+      <view class="content">
+        <view>
+          <view class="number">03.</view>
+          <view>居住地址</view>
+        </view>
+        <input type="text" value="{{inputText3}}" bindinput="onInputText3"/>
+      </view>
+      <!-- 04 -->
+      <view class="content newContent">
+        <view>
+          <view class="number">04.</view>
+          <view>是否处于隔离中，或者14天内与确诊疑似患者有亲密接触，或者确诊出院未满14天？</view>
+        </view>
+        <radio-group name="radio">
+          <view><radio value="radio1"/>是</view>
+          <view><radio value="radio2"/>否</view> 
+        </radio-group>  
+      </view>
+      <!-- 05 -->
+      <view class="content newContent">
+        <view>
+          <view class="number">05.</view>
+          <view>当前身体状况</view>
+        </view>
+        <radio-group name="radio2">
+          <view><radio value="radio1"/>无异常</view>
+          <view><radio value="radio2"/>发热/乏力/干咳/腹泻</view> 
+        </radio-group>
+      </view>
+      <!-- 06 -->
+      <view class="content newContent">
+        <view>
+          <view class="number">06.</view>
+          <view>近14天是否有到达疫区或海外地区</view>
+        </view>
+        <radio-group name="radio3">
+          <view><radio value="radio1"/>是</view>
+          <view><radio value="radio2"/>否</view>
+        </radio-group>
+      </view>
+      <!-- 07 -->
+      <view class="content newContent">
+        <view>
+          <view class="number">07.</view>
+          <view>健康码截图上传</view>
+        </view>
+        <view class="weui-uploader">
+            <view class="img-v weui-uploader__bd">
+              <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                  <image class='weui-uploader__img '
+                          src="{{item}}"
+                          data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                            <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+                  </image>
+              </view>
+                <!-- 用来提示用户上传图片 -->
+                <view class="weui-uploader__input-box pic" bindtap="chooseImg"> </view>
+            </view>
+            <button class="upload-img-btn" bindtap="chooseImg" hidden="{{hiddenName}}" type="primary" size="mini">拍照  / 上传</button>
+          </view>
+      </view>
+      <!-- 08 -->
+      <view class="content newContent">
+        <view>
+          <view class="number">08.</view>
+          <view>当前选择城市</view>
+        </view>
+          <view class="thisCityName">{{address}}</view>
+          <view><button class="addressBtn" type="primary" size="mini" bindtap="getUserLocation">当前位置</button></view>
+      </view>
+      <button class="submitBtn" type="submit">提交</button>
+    </form>
+    <view class="footer">
+      <view>本人郑重承诺:</view>
+      <view>为疫情防控，本人同意以上信息依法提交所在学校及相关教育和医疗部门统筹管理，上诉信息是本人或监护人填写，本人及监护人对信息内容的真实性和完整性负责。</view>
+    </view>
+    
+  </view>
+</view>
